@@ -13,6 +13,8 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 
 app.use("/auth", require("./Auth/routes/authRoute"));
+app.use("/admin", require("./Admin/routes/adminRouts"));
+app.use("/users", require("./Users/routes/userRouts"));
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
