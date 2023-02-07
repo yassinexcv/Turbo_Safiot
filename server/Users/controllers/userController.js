@@ -1,7 +1,8 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const User = require('../../Auth/models/authModel');
-const Scouter = require('../../Admin/models/adminModel');
+// const Scouter = require('../../Admin/models/adminModel');
+const Scouter = require('../../scooter/Model/ScouterModel');
 
 
 
