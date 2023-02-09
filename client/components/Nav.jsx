@@ -6,6 +6,7 @@ import Dashboard from '../pages/Dashboard';
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 
+
 const Tab = createBottomTabNavigator();
 const Tabs = () => {
   const [admin, setAdmin] = useState(true);
@@ -31,17 +32,18 @@ const Tabs = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={Home} options={{headerShown : false }}/>
       <Tab.Screen name="Login" component={Login} />
       {admin ? (
         <>
           <Tab.Screen name="Register" component={Register} />
-          <Tab.Screen name="Dashboard" component={Dashboard} />
+          <Tab.Screen name="Dashboard" component={Dashboard} options={{headerShown : false }} />
         </>
       ) : null}
     </Tab.Navigator>
   );
 };
+
 
 export default Tabs;
 

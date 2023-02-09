@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, FlatList , ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
 // burger menu
@@ -25,7 +25,8 @@ const DashboardScreen = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ImageBackground source={require('../assets/bg.png')} style={styles.BgImage} resizeMode='cover'  >
+  <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Dashboard</Text>
         <Icon
@@ -56,6 +57,7 @@ const DashboardScreen = () => {
         />
       </ScrollView>
     </View>
+    </ImageBackground>
   );
 };
 
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
-    backgroundColor: '#009387',
+    backgroundColor: '#000',
     height: 100,
     alignItems: 'center',
     justifyContent: 'center',
@@ -78,6 +80,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+  BgImage: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+    },
 });
 
 export default DashboardScreen;
