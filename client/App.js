@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './pages/Home';
+import Trotinette from './pages/Trotinette';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Nav from './components/Nav';
@@ -28,8 +29,15 @@ export default function App() {
           component={Nav}
           options={{
             headerShown: false
-          }}
+          }}  
         />
+          <Stack.Screen
+            name="Trotinette"
+            component={Trotinette}
+            options={{
+              headerShown: false
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

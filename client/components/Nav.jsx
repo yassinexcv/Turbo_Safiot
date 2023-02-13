@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Dashboard from '../pages/Dashboard';
+import Trotinette from '../pages/Trotinette';
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 
@@ -22,6 +23,8 @@ const Tabs = () => {
           } else if (route.name === 'Register') {
             iconName = focused ? 'person-add' : 'person-add-outline';
           } else if (route.name === 'Dashboard') {
+            iconName = focused ? 'list' : 'list-outline';
+          } else if (route.name === 'Trotinette') {
             iconName = focused ? 'list' : 'list-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
