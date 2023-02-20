@@ -29,12 +29,6 @@ const DashboardScreen = () => {
   <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Dashboard</Text>
-        <Icon
-          name='menu'
-          color='#fff'
-          onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-          
-        />
       
       </View>
       <ScrollView>
@@ -48,12 +42,17 @@ const DashboardScreen = () => {
               <Text style={{ marginBottom: 10 }}>
                 {item.description}
               </Text>
+              <Text style={{ marginBottom: 10 }}>
+                {item._id}
+              </Text>
               <Button
                 icon={<Icon name='code' color='#ffffff' />}
                 buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
                 title='VIEW NOW' 
-                onPress={() => navigation.navigate('Trotinette')}
+                onPress={() => navigation.navigate('Trotinette' , {id: item._id})}
+                
                 />
+              
                
               
               

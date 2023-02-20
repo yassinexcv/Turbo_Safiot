@@ -36,6 +36,16 @@ const getScouters = asyncHandler(async (req, res) => {
 }
 )
 
+const getScouterById = asyncHandler(async (req, res) => {
+    const scouter = await Scouter.findById(req.params.id)
+    if (scouter) {
+        res.json(scouter)
+    } else {
+        res.status(404)
+        throw new Error('Scouter not found')
+    }
+})
+
 const activateScouter = asyncHandler(async (req, res) => {
     const scouter = await Scouter.findById(req.params.id)
     if (scouter) {
@@ -61,5 +71,5 @@ const desactivateScouter = asyncHandler(async (req, res) => {
 }
 )
 
-module.exports = {addScouter,getScouters,activateScouter,desactivateScouter}
+module.exports = {addScouter,getScouters,activateScouter,desactivateScouter , getScouterById}
 

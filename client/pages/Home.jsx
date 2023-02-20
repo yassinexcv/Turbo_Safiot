@@ -10,7 +10,9 @@ const App = () => {
       const response = await fetch('http://192.168.10.37:5000/scouter/getScouter');
       const data = await response.json();
       setMarkers(data);
+      
     }
+   
     fetchMarkers();
   }, []);
 
